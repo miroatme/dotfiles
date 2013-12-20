@@ -1,0 +1,11 @@
+function pid(){
+	ps auxwww | grep $1 | grep -v grep | awk '{print $2}'
+}
+
+function killd(){
+	for i in `pid $1`
+		do
+			kill -9 $i
+			echo "KILLED: $i"
+	done
+}
