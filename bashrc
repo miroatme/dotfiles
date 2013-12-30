@@ -8,6 +8,13 @@
 # tput hack - to end error messages on login or command run
 export TERMINFO=/usr/lib/terminfo
 
+# Ensure that tmux starts on login and that there are no mess of shells
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
+
 # User specific aliases and functions
 if [ -f ~/.bash_alias ]; then
 	. ~/.bash_alias
