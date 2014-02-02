@@ -8,9 +8,8 @@ if [ `id -u` = 0 ]
     exit 1
 fi
 
-fil=/privat/var/vm/slpimag
-pmst-aibrnatmd0&&\
-rm-ffil&&\
-flagssgfil
-
+file=/private/var/vm/sleepimage &&\
+rm -f $file &&\
+touch /private/var/vm/sleepimage &&\
+chflags schg $file
 echo "...and done :D"
