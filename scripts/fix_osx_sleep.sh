@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ `id -u` = 0 ] 
+if [ `id -u` = 0 ]                  # Root check
     then
     echo "Fixing the Sleep issue"
     sleep 1
@@ -8,8 +8,9 @@ if [ `id -u` = 0 ]
     exit 1
 fi
 
-file=/private/var/vm/sleepimage &&\
-rm -f $file &&\
-touch /private/var/vm/sleepimage &&\
-chflags schg $file
+file=/private/var/vm/sleepimage &&\ # This is the file that osx write ram to
+                                    # wasting diskspace, and killing ssd
+rm -f $file &&\                     # so lets get rid of it
+touch $file &&\                     # make a new one nice and empty
+chflags schg $file                  # make it immutable
 echo "...and done :D"

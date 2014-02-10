@@ -15,7 +15,6 @@ hi CursorColumn cterm=NONE ctermbg=Blue
 set nu
 set incsearch
 set laststatus=2
-set list listchars=tab:›·,trail:▒
 set linespace=0
 set modeline
 hi SpecialKey ctermfg=DarkGrey
