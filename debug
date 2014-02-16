@@ -1,0 +1,8 @@
+#!/bin/bash
+
+bin=`echo $1 | sed 's/\.c$/.o/'`
+
+gcc -g $1 -o $bin
+gdb -q ~+/$bin
+rm -f $bin
+rm -rf $bin.o*
