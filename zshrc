@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/local/ANT/kevinkn/.rbenv/bin:/home/local/ANT/kevinkn/.rbenv/shims:/home/local/ANT/kevinkn/.rbenv/bin:/usr/lib/lightdm/lightdm:/usr/local/bin:/usr/bin:/bin"
+export PATH="/home/local/ANT/kevinkn/.rbenv/bin:/home/local/ANT/kevinkn/.rbenv/shims:/home/local/ANT/kevinkn/.rbenv/bin:/usr/lib/lightdm/lightdm:/usr/local/bin:/usr/bin:/bin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -68,3 +68,20 @@ export PATH="/home/local/ANT/kevinkn/.rbenv/bin:/home/local/ANT/kevinkn/.rbenv/s
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+if `which tmux 2>&1 >/dev/null`; then
+        #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
+
+cd="smartcd cd"
+
+[ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
+
+
+function work(){
+    source ~/git/aws-cli/bin/activate
+}
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export JAVA_HOME=$(/usr/libexec/java_home)
+alias nobounce="defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock"
