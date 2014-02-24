@@ -2,7 +2,8 @@ syntax enable
 syntax on
 set ts=4
 set sw=4
-color awesome
+set background=dark
+colorscheme solarized
 set expandtab
 set nocompatible
 set backspace=indent,eol,start
@@ -10,11 +11,12 @@ set history=50
 set ruler
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=NONE ctermbg=Blue
-hi CursorColumn cterm=NONE ctermbg=Blue
+hi CursorLine cterm=NONE ctermbg=LightRed
+hi CursorColumn cterm=NONE ctermbg=LightRed
 set nu
 set incsearch
 set laststatus=2
+set list listchars=tab:›·,trail:▒
 set linespace=0
 set modeline
 hi SpecialKey ctermfg=DarkGrey
@@ -31,3 +33,64 @@ hi ColorColumn  ctermbg=Red
 let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 call matchdelete(w:m2)
+
+
+""""""""""""
+
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+"
+" original repos on GitHub
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'scrooloose/syntastic'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-rails'
+Bundle 'pangloss/vim-javascript'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-git'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'godlygeek/tabular'
+Bundle 'perl-support.vim'
+Bundle 'simplefold'
+Bundle 'Raimondi/delimitMate'
+Bundle 't9md/vim-ruby-xmpfilter'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" non-GitHub repos
+Bundle 'git://git.wincent.com/command-t.git'
+" Git repos on your local machine (i.e. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle commands are not allowed.
+
+" Auto reload .vimrc
+augroup reload_vimrc " {
+    autocmd!
+        autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
