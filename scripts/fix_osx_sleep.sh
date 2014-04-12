@@ -8,9 +8,10 @@ if [ `id -u` = 0 ]                  # Root check
     exit 1
 fi
 
-file=/private/var/vm/sleepimage &&\ # This is the file that osx write ram to
+pmset hibernatemode 0
+file=/private/var/vm/sleepimage     # This is the file that osx write ram to
                                     # wasting diskspace, and killing ssd
-rm -f $file &&\                     # so lets get rid of it
-touch $file &&\                     # make a new one nice and empty
+rm -f $file                         # so lets get rid of it
+touch $file                         # make a new one nice and empty
 chflags schg $file                  # make it immutable
-echo "...and done :D"
+echo "....and done!"
