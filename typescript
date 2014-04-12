@@ -1,0 +1,100 @@
+Script started on Sat Apr 12 08:49:24 2014
+[?1034hbash-3.2$ pwd
+/Users/arkadios/git/dotfiles
+bash-3.2$ rsync tmux.conf ~/.tmux.com[Knf
+bash-3.2$ rsync 
+.git/         bash_bin      irssi/        seeker/       zshrc
+.gitignore    bash_profile  oh-my-zsh/    state         
+README.md     bashrc        pianobar/     tmux.conf     
+awesome.vim   config        run           typescript    
+bash_aliases  debug         scripts/      vimrc         
+bash-3.2$ rsync oh-my-zsh/ ~/.oh-my-zsh
+skipping directory oh-my-zsh/.
+bash-3.2$ rsync[K[K[K[K[Kfor i in bash_aliases bash_bin bash_profile bashrc irssi/ pianobar/ vi mrc zshrc  ; do rsynz[Kx[Kc $i ~/.$a[Ki[C[1@ [1@-[1@a[1@v[1@z[C[C[C[C[C[C[C[C[C ; done
+building file list ... done
+bash_aliases
+
+sent 1582 bytes  received 42 bytes  3248.00 bytes/sec
+total size is 3435  speedup is 2.12
+building file list ... done
+bash_bin
+
+sent 252 bytes  received 42 bytes  588.00 bytes/sec
+total size is 159  speedup is 0.54
+building file list ... done
+bash_profile
+
+sent 266 bytes  received 42 bytes  616.00 bytes/sec
+total size is 181  speedup is 0.59
+building file list ... done
+bashrc
+
+sent 701 bytes  received 42 bytes  1486.00 bytes/sec
+total size is 973  speedup is 1.31
+building file list ... done
+created directory /Users/arkadios/.irssi
+./
+config
+default.theme
+fear2.theme
+keepnick
+triggers
+scripts/
+scripts/autorun/
+scripts/autorun/adv_windowlist.pl
+scripts/autorun/alame.pl
+scripts/autorun/ascii.pl
+scripts/autorun/aspell_complete.pl
+scripts/autorun/away.pl
+scripts/autorun/away_hilight_notice.pl
+scripts/autorun/cgrep.pl
+scripts/autorun/cron.pl
+scripts/autorun/dns.pl
+scripts/autorun/foreach_user.pl
+scripts/autorun/forward.pl
+scripts/autorun/google.pl
+scripts/autorun/gtrans.pl
+scripts/autorun/hideauth.pl
+scripts/autorun/hilightwin.pl
+scripts/autorun/invitejoin.pl
+scripts/autorun/keepnick.pl
+scripts/autorun/ls.pl
+scripts/autorun/mpg123.pl
+scripts/autorun/nicklist.pl
+scripts/autorun/postpone.pl
+scripts/autorun/rainbow.pl
+scripts/autorun/tab_stop.pl
+scripts/autorun/trigger.pl
+scripts/autorun/usercount(1).pl
+scripts/autorun/usercount.pl
+scripts/autorun/verstats.pl
+scripts/autorun/xchatnickcolor.pl
+
+sent 89646 bytes  received 764 bytes  180820.00 bytes/sec
+total size is 273139  speedup is 3.02
+building file list ... done
+created directory /Users/arkadios/.pianobar
+./
+config
+state
+
+sent 832 bytes  received 70 bytes  1804.00 bytes/sec
+total size is 1165  speedup is 1.29
+building file list ... done
+vimrc
+
+sent 1374 bytes  received 42 bytes  2832.00 bytes/sec
+total size is 2538  speedup is 1.79
+building file list ... done
+zshrc
+
+sent 1469 bytes  received 42 bytes  3022.00 bytes/sec
+total size is 2794  speedup is 1.85
+bash-3.2$ ls
+README.md	bash_profile	irssi		scripts		typescript
+awesome.vim	bashrc		oh-my-zsh	seeker		vimrc
+bash_aliases	config		pianobar	state		zshrc
+bash_bin	debug		run		tmux.conf
+bash-3.2$ vim [K[K[K[Kexit
+
+Script done on Sat Apr 12 08:51:24 2014
