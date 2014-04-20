@@ -1,4 +1,4 @@
-user =
+user = 
 password = 
 audio_format = mp3-hifi
 #event_command = /Users/miro/bin/pandora_notify

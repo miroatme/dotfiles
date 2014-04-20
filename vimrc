@@ -3,16 +3,16 @@ syntax on
 set ts=4
 set sw=4
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 set expandtab
-set nocompatible
+set compatible
 set backspace=indent,eol,start
 set history=50
 set ruler
 set cursorline
 set cursorcolumn
-hi CursorLine cterm=NONE ctermbg=LightRed
-hi CursorColumn cterm=NONE ctermbg=LightRed
+hi CursorLine cterm=NONE ctermbg=DarkRed
+hi CursorColumn cterm=NONE ctermbg=DarkRed
 set nu
 set incsearch
 set laststatus=2
@@ -27,9 +27,9 @@ ab aprint printf "%s\n" %
 ab envr #!/usr/bin/env ruby
 ab envp #!/usr/bin/env python
 ab envb #!/bin/bash
-ab std #include <stdio.h>
+"ab std #include <stdio.h>
 set colorcolumn=80
-hi ColorColumn  ctermbg=Red
+hi ColorColumn  ctermbg=DarkRed
 let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 call matchdelete(w:m2)
