@@ -34,6 +34,7 @@ let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 call matchdelete(w:m2)
 
+:setlocal foldmethod=syntax
 
 """"""""""""
 
@@ -72,6 +73,8 @@ Bundle 't9md/vim-ruby-xmpfilter'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'joonty/vdebug.git'
+Bundle 'joonty/vdebug'
 " non-GitHub repos
 Bundle 'git://git.wincent.com/command-t.git'
 " Git repos on your local machine (i.e. when working on your own plugin)
