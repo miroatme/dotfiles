@@ -2,9 +2,9 @@
 trap '' 1 2 3 18
 stty -echo
 echo "Key: "
-read -s key_1
+read key_1
 echo "Again: "
-read -s key_2
+read key_2
 echo
 
 key_3=
@@ -17,6 +17,6 @@ then
 		read key_3
 	done
 else
-	echo "locktty: keys do not watch " 1>&2
+	echo "locktty: keys do not match " 1>&2
 fi
 stty echo
